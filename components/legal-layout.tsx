@@ -28,7 +28,7 @@ export function LegalLayout({ title, lastUpdated, children }: LegalLayoutProps) 
 
           <div className="border-t border-border mt-16 pt-8">
             <p className="text-sm text-foreground/60">
-              If you have any questions about these terms, please contact us at support@udhariplay.com
+              If you have any questions about these terms, please contact us at udharipay@gmail.com
             </p>
           </div>
         </div>

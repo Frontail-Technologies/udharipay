@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: [],
     },
-    sitemap: 'https://udhariplay.com/sitemap.xml',
+    sitemap: 'https://udharipay.com/sitemap.xml',
   }
 }

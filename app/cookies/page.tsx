@@ -65,7 +65,7 @@ export default function CookiesPage() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">7. Contact Us</h2>
           <p>
-            If you have questions about this Cookie Policy, please contact us at: support@udhariplay.com
+            If you have questions about this Cookie Policy, please contact us at: udharipay@gmail.com
           </p>
         </section>
       </div>

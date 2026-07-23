@@ -79,7 +79,7 @@ export default function DisclaimerPage() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">10. Contact</h2>
           <p>
-            For questions regarding this disclaimer, please contact us at: support@udhariplay.com
+            For questions regarding this disclaimer, please contact us at: udharipay@gmail.com
           </p>
         </section>
       </div>

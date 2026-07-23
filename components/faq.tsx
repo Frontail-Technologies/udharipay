@@ -20,7 +20,7 @@ export default function FAQ() {
     },
     {
       question: 'What are your settlement times?',
-      answer: 'We offer instant settlement options. Depending on your payment method, settlements typically happen within 24 hours. Premium merchants get even faster settlement.'
+      answer: 'Our standard settlement time is T+1 Working Day. Funds from successful payments are settled to your bank account on the next working day. Transactions processed on weekends or bank holidays will be settled on the following working day.'
     },
     {
       question: 'Do you charge hidden fees?',

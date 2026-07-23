@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
 
 interface LegalLayoutProps {
   title: string
@@ -9,9 +11,10 @@ interface LegalLayoutProps {
 export function LegalLayout({ title, lastUpdated, children }: LegalLayoutProps) {
   return (
     <>
-      <div className="min-h-screen bg-background">
+      <Header />
+      <div className="min-h-screen bg-background pt-24">
         <div className="mx-auto max-w-4xl px-6 py-16">
-          <Link href="/" className="text-sm text-primary hover:text-primary/80 mb-8 inline-block">
+          <Link href="/" className="text-sm text-primary hover:text-primary/80 mb-8 inline-block font-medium">
             ← Back to Home
           </Link>
           
@@ -33,6 +36,7 @@ export function LegalLayout({ title, lastUpdated, children }: LegalLayoutProps) 
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

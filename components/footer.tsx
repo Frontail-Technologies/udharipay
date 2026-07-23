@@ -13,12 +13,8 @@ export default function Footer() {
   const legalLinks = [
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms & Conditions', href: '/terms' },
-    { label: 'Payment Mandate Terms', href: '/mandate-terms' },
-    { label: 'KYC Consent', href: '/kyc-consent' },
     { label: 'Settlement Policy', href: '/settlement' },
     { label: 'Refund & Cancellation', href: '/refund' },
-    { label: 'Grievance Redressal', href: '/grievance' },
-    { label: 'Data Retention', href: '/data-retention' },
   ]
 
   return (

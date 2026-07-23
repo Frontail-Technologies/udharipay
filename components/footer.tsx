@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* ── Brand ── */}
           <div className="space-y-4 md:col-span-1">
-            <Link href="/" className="flex items-center font-bold text-xl tracking-tight">
+            <Link href="/" className="flex items-center italic font-bold text-xl tracking-tight">
               <span className="text-foreground">UDHARI</span>
               <span className="text-primary">PAY</span>
             </Link>

@@ -33,7 +33,7 @@ export default function Header() {
         >
           <nav className="flex h-14 items-center justify-between px-5">
             {/* Logo */}
-            <Link href="/" className="flex items-center font-bold text-xl tracking-tight">
+            <Link href="/" className="flex items-center font-bold italic text-xl tracking-tight">
               <span className="text-foreground">UDHARI</span>
               <span className="text-primary">PAY</span>
             </Link>

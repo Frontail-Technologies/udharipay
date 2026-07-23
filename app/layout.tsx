@@ -7,7 +7,6 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'UdhariPay - Smart Payments. Stronger Business.',
   description: 'Complete SaaS platform for merchants to manage payments, automate collections, and grow business with powerful fintech solutions.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {

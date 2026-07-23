@@ -15,9 +15,9 @@ export default function Hero() {
 
           {/* ── Left Content ── */}
           {/* pt-24 offsets the floating navbar height */}
-          <div className="space-y-8 pt-32 pb-16">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-8 pt-32 pb-16">
 
-            <h1 className="text-4xl md:text-5xl lg:text-[54px] font-extrabold leading-[1.08] tracking-tight md:text-left text-center text-foreground">
+            <h1 className="text-4xl md:text-5xl lg:text-[54px] font-extrabold leading-[1.08] tracking-tight text-foreground">
               Automate Collections.
               <br />
               <span className="text-primary">Improve Cash Flow.</span>
@@ -28,7 +28,7 @@ export default function Hero() {
             </p>
 
             {/* Mobile App Coming Soon */}
-            <div className="space-y-3">
+            <div className="space-y-3 flex flex-col items-center md:items-start w-full">
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
                 Download the App — Coming Soon
               </p>

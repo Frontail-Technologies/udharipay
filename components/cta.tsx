@@ -47,7 +47,7 @@ export default function CTA() {
           </div>
 
           {/* Right buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3 flex-shrink-0">
 
             {/* Play Store */}
             <div className="flex items-center gap-3 rounded-2xl border-2 border-border bg-foreground px-5 py-3 opacity-70 cursor-not-allowed select-none w-full sm:w-fit">

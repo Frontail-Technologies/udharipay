@@ -11,90 +11,61 @@ const cards = [
   {
     icon: Wallet,
     badge: 'Today',
-    badgeVariant: 'primary',
     title: '₹84,034',
     subtitle: 'Collected',
     footer: { icon: TrendingUp, text: '12% vs yesterday' },
-    footerVariant: 'primary',
-    highlight: 'title',
   },
   {
     icon: ShieldCheck,
+    iconColor: 'text-success',
+    iconBg: 'bg-success/10',
     badge: 'Active',
-    badgeVariant: 'primary',
-    title: 'Mandate',
-    subtitle: 'Active',
+    title: '1,204',
+    subtitle: 'Active Mandates',
     footer: { icon: CircleCheckBig, text: 'UPI Autopay Enabled' },
-    footerVariant: 'primary',
-    highlight: 'subtitle',
   },
   {
     icon: CalendarClock,
     badge: 'Upcoming',
-    badgeVariant: 'warning',
-    title: 'Next EMI',
-    subtitle: '₹15,000',
-    footer: { icon: CalendarClock, text: 'Due on 25 May 2024' },
-    footerVariant: 'warning',
-    highlight: 'subtitle',
+    title: '₹15,000',
+    subtitle: 'Next EMI',
+    footer: { icon: CalendarClock, text: 'Due on 25 May' },
   },
   {
     icon: CircleCheckBig,
+    iconColor: 'text-success',
+    iconBg: 'bg-success/10',
+    solidFill: true,
     badge: 'Success',
-    badgeVariant: 'success',
-    title: 'Payment',
-    subtitle: 'Successful',
-    footer: { icon: Clock, text: '25 May 2024, 10:45 AM' },
-    footerVariant: 'success',
-    highlight: 'subtitle',
+    title: 'High',
+    subtitle: 'Success Percentage',
+    footer: { icon: Clock, text: 'Last 30 days' },
   },
   {
     icon: UserCheck,
+    iconColor: 'text-success',
+    iconBg: 'bg-success/10',
     badge: 'Verified',
-    badgeVariant: 'primary',
-    title: 'Customer',
-    subtitle: 'Verified',
+    title: '842',
+    subtitle: 'Verified Customers',
     footer: { icon: ShieldCheck, text: 'Aadhaar OTP Verified' },
-    footerVariant: 'primary',
-    highlight: 'subtitle',
   },
   {
     icon: AlertTriangle,
-    badge: 'Overdue',
-    badgeVariant: 'danger',
-    title: 'Overdue',
-    subtitle: 'Alert',
-    footer: { icon: ShieldAlert, text: '3 days overdue' },
-    footerVariant: 'danger',
-    highlight: 'subtitle',
+    iconColor: 'text-destructive',
+    iconBg: 'bg-destructive/10',
+    badge: 'Alerts',
+    title: 'Very Low',
+    subtitle: 'Overdue Percentage',
+    footer: { icon: ShieldAlert, text: 'Below industry average' },
   },
 ]
 
-const badgeStyles: Record<string, string> = {
-  primary: 'bg-primary/10 text-primary',
-  success:  'bg-success/10 text-success',
-  warning:  'bg-warning/10 text-warning',
-  danger:   'bg-destructive/10 text-destructive',
-}
-const footerStyles: Record<string, string> = {
-  primary: 'bg-primary/8 text-primary',
-  success:  'bg-success/8 text-success',
-  warning:  'bg-warning/8 text-warning',
-  danger:   'bg-destructive/8 text-destructive',
-}
-const highlightStyles: Record<string, string> = {
-  primary: 'text-primary',
-  success:  'text-success',
-  warning:  'text-warning',
-  danger:   'text-destructive',
-}
-
-function StatCard({ card, index }: { card: typeof cards[number]; index: number }) {
+function StatCard({ card, index }: { card: typeof cards[number] & { iconColor?: string, iconBg?: string, solidFill?: boolean }; index: number }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
   const FooterIcon = card.footer.icon
   const CardIcon = card.icon
-  const subtitleColor = highlightStyles[card.badgeVariant] ?? 'text-primary'
 
   return (
     <motion.div
@@ -102,37 +73,33 @@ function StatCard({ card, index }: { card: typeof cards[number]; index: number }
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.45, delay: index * 0.07, ease: 'easeOut' }}
-      className="bg-card rounded-xl border border-border p-4 flex flex-col gap-3 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+      className="group relative overflow-hidden bg-card rounded-2xl border border-border/50 p-4 md:p-5 flex flex-col justify-between gap-3 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300"
     >
       {/* Top row */}
-      <div className="flex items-center justify-between">
-        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-          <CardIcon className="w-4 h-4 text-primary" strokeWidth={1.75} />
+      <div className="flex items-start justify-between">
+        <div className={`w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-colors ${card.iconBg || 'bg-primary/10'}`}>
+          <CardIcon 
+            className={`w-4 h-4 md:w-5 md:h-5 ${card.iconColor || 'text-primary'}`} 
+            strokeWidth={1.75} 
+            fill={card.solidFill ? "currentColor" : "none"}
+            style={{ stroke: card.solidFill ? "white" : undefined }}
+          />
         </div>
-        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${badgeStyles[card.badgeVariant]}`}>
+        <span className="text-[10px] md:text-[11px] font-medium px-2 py-0.5 rounded-md bg-secondary/80 text-muted-foreground border border-border/50">
           {card.badge}
         </span>
       </div>
 
       {/* Metric */}
-      <div className="space-y-0.5">
-        {card.highlight === 'title' ? (
-          <>
-            <p className="text-2xl font-bold text-foreground tracking-tight leading-none">{card.title}</p>
-            <p className="text-xs text-muted-foreground mt-1">{card.subtitle}</p>
-          </>
-        ) : (
-          <>
-            <p className="text-xs text-muted-foreground">{card.title}</p>
-            <p className={`text-2xl font-bold tracking-tight leading-none ${subtitleColor}`}>{card.subtitle}</p>
-          </>
-        )}
+      <div className="space-y-0.5 md:space-y-1 mt-1">
+        <p className="text-xl md:text-3xl font-bold text-foreground tracking-tight leading-none">{card.title}</p>
+        <p className="text-[11px] md:text-sm text-muted-foreground font-medium">{card.subtitle}</p>
       </div>
 
-      {/* Footer pill */}
-      <div className={`flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[11px] font-medium ${footerStyles[card.footerVariant]}`}>
-        <FooterIcon className="w-3 h-3 flex-shrink-0" strokeWidth={2} />
-        {card.footer.text}
+      {/* Footer text */}
+      <div className="mt-1 md:mt-2 flex items-center gap-1.5 text-[10px] md:text-xs font-medium text-muted-foreground">
+        <FooterIcon className="w-3 h-3 md:w-3.5 md:h-3.5 flex-shrink-0 opacity-70" strokeWidth={2} />
+        <span className="truncate">{card.footer.text}</span>
       </div>
     </motion.div>
   )
@@ -155,7 +122,7 @@ export default function StatsCards() {
           Everything at a glance
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {cards.map((card, i) => (
             <StatCard key={i} card={card} index={i} />
           ))}

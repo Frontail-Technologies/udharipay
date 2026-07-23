@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Smartphone, Apple } from 'lucide-react'
+import { Smartphone } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -33,14 +33,7 @@ export default function Hero() {
                 Download the App — Coming Soon
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                {/* App Store */}
-                <div className="flex items-center gap-3 rounded-2xl border-2 border-border bg-foreground px-5 py-3 opacity-70 cursor-not-allowed select-none w-full sm:w-fit">
-                  <Apple className="w-6 h-6 text-background flex-shrink-0" />
-                  <div>
-                    <p className="text-[10px] text-background/60 leading-none mb-0.5">Coming soon on</p>
-                    <p className="text-sm font-bold text-background leading-none">App Store</p>
-                  </div>
-                </div>
+
                 {/* Play Store */}
                 <div className="flex items-center gap-3 rounded-2xl border-2 border-border bg-foreground px-5 py-3 opacity-70 cursor-not-allowed select-none w-full sm:w-fit">
                   <Smartphone className="w-6 h-6 text-background flex-shrink-0" />

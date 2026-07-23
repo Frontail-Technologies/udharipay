@@ -78,14 +78,7 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col gap-2.5">
-              {/* App Store */}
-              <div className="flex items-center gap-3 rounded-xl border border-border bg-secondary px-4 py-3 opacity-60 cursor-not-allowed select-none">
-                <Smartphone className="w-5 h-5 text-foreground flex-shrink-0" />
-                <div>
-                  <p className="text-[10px] text-muted-foreground leading-none mb-0.5">Coming Soon</p>
-                  <p className="text-sm font-semibold text-foreground leading-none">App Store</p>
-                </div>
-              </div>
+
               {/* Play Store */}
               <div className="flex items-center gap-3 rounded-xl border border-border bg-secondary px-4 py-3 opacity-60 cursor-not-allowed select-none">
                 <Smartphone className="w-5 h-5 text-foreground flex-shrink-0" />

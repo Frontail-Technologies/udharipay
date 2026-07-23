@@ -47,7 +47,7 @@ export default function ForBusinesses() {
           {businesses.slice(0, 4).map((business, index) => {
             const IconComponent = business.icon
             return (
-              <div key={index} className="space-y-4">
+              <div key={index} className="space-y-4 border border-border shadow-sm p-6 rounded-2xl bg-card hover:shadow-md transition-shadow">
                 <IconComponent className="w-8 h-8 text-primary" strokeWidth={1.5} />
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">{business.title}</h3>

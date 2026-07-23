@@ -89,11 +89,7 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
-              <div className="border-t border-border mt-3 pt-3">
-                <Button className="w-full bg-primary hover:bg-accent text-primary-foreground rounded-xl">
-                  Book a Demo
-                </Button>
-              </div>
+
             </nav>
           </div>
         </>

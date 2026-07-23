@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <>
       {/* Floating navbar wrapper */}
-      <div className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6">
+      <div className="fixed top-4 left-0 right-0 z-50 px-6">
         <header
           className={`mx-auto max-w-6xl rounded-2xl border transition-all duration-300 ${scrolled
             ? 'bg-background/90 backdrop-blur-md border-border shadow-lg shadow-foreground/5'

@@ -10,7 +10,7 @@ export function LegalLayout({ title, lastUpdated, children }: LegalLayoutProps) 
   return (
     <>
       <div className="min-h-screen bg-background">
-        <div className="mx-auto max-w-4xl px-4 md:px-6 py-16">
+        <div className="mx-auto max-w-4xl px-6 py-16">
           <Link href="/" className="text-sm text-primary hover:text-primary/80 mb-8 inline-block">
             ← Back to Home
           </Link>

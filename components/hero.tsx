@@ -10,7 +10,7 @@ export default function Hero() {
         style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--primary) 5%, transparent), transparent 60%)' }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-3 md:px-6">
+      <div className="relative max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[90vh]">
 
           {/* ── Left Content ── */}

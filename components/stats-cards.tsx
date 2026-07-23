@@ -143,7 +143,7 @@ export default function StatsCards() {
   const headInView = useInView(headRef, { once: true, margin: '-40px' })
 
   return (
-    <section className="bg-background px-3 md:px-6 py-12">
+    <section className="bg-background px-6 py-12">
       <div className="max-w-6xl mx-auto">
         <motion.p
           ref={headRef}

@@ -30,7 +30,7 @@ export default function ForBusinesses() {
   ]
 
   return (
-    <section id="businesses" className="px-4 md:px-6 py-20 md:py-28 bg-background">
+    <section id="businesses" className="px-6 py-20 md:py-28 bg-background">
       <div className="max-w-6xl mx-auto space-y-16">
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">

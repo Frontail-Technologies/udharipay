@@ -68,7 +68,7 @@ function StepBlock({ step }: { step: typeof steps[number] }) {
 
   return (
     /* All steps white background */
-    <div ref={ref} className="bg-background px-4 md:px-6 py-6  md:py-24">
+    <div ref={ref} className="bg-background px-6 py-6  md:py-24">
       <div className="max-w-6xl mx-auto">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center ${!step.imageRight ? 'lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1' : ''
           }`}>
@@ -151,7 +151,7 @@ export default function ProductShowcase() {
         initial={{ opacity: 0, y: 20 }}
         animate={headerInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="px-3 md:px-6 pt-20 pb-2 text-center max-w-2xl mx-auto"
+        className="px-6 pt-20 pb-2 text-center max-w-2xl mx-auto"
       >
         <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">How It Works</p>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">

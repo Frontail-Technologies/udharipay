@@ -33,7 +33,7 @@ export default function FAQ() {
   ]
 
   return (
-    <section id="faq" className="px-3 md:px-6 py-20 md:py-28">
+    <section id="faq" className="px-6 py-20 md:py-28">
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <span className="text-xs font-semibold text-primary uppercase tracking-widest">FAQ</span>

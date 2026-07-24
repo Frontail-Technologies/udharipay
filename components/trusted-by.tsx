@@ -1,8 +1,17 @@
+'use client'
+
 import { Store, Handshake, Truck, Users } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function TrustedBy() {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <motion.section 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6 }}
+      className="bg-background py-16 md:py-24"
+    >
       <div className="max-w-4xl mx-auto px-6 flex flex-col items-center justify-center gap-12">
         
         {/* Title with lines */}
@@ -56,6 +65,6 @@ export default function TrustedBy() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }

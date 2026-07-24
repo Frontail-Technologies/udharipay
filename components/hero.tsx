@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
-import { Smartphone } from 'lucide-react'
+import { Smartphone, Mail } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
@@ -15,7 +18,12 @@ export default function Hero() {
 
           {/* ── Left Content ── */}
           {/* pt-24 offsets the floating navbar height */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-8 pt-32 pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="flex flex-col items-center md:items-start text-center md:text-left space-y-8 pt-32 pb-16"
+          >
 
             <h1 className="text-4xl md:text-5xl lg:text-[54px] font-extrabold leading-[1.08] tracking-tight text-foreground">
               Automate Collections.
@@ -42,6 +50,15 @@ export default function Hero() {
                     <p className="text-sm font-bold text-background leading-none">Google Play</p>
                   </div>
                 </div>
+
+                {/* Contact Button */}
+                <a
+                  href="mailto:udharipay@gmail.com"
+                  className="flex items-center justify-center gap-2.5 rounded-2xl border-2 border-border bg-background px-6 py-3 text-sm font-bold text-foreground hover:bg-secondary transition-colors w-full sm:w-fit"
+                >
+                  <Mail className="w-5 h-5" strokeWidth={2.5} />
+                  Contact Us
+                </a>
               </div>
               {/* Pulsing live badge */}
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-xs font-semibold text-primary">
@@ -52,10 +69,15 @@ export default function Hero() {
                 App in development · Web platform live now
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* ── Right — Hero Image ── */}
-          <div className="relative flex items-center justify-center lg:justify-end h-full pt-10 lg:pt-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+            className="relative flex items-center justify-center lg:justify-end h-full pt-10 lg:pt-0"
+          >
             <div
               className="absolute inset-0 rounded-3xl blur-3xl opacity-20 pointer-events-none"
               style={{ background: 'radial-gradient(ellipse at center, var(--primary), transparent 70%)' }}
@@ -72,7 +94,7 @@ export default function Hero() {
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

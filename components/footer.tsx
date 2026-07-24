@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { Smartphone } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -18,7 +21,13 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="border-t border-border bg-background">
+    <motion.footer 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: '-20px' }}
+      transition={{ duration: 0.8 }}
+      className="border-t border-border bg-background"
+    >
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
@@ -31,6 +40,12 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed max-w-[14rem]">
               The complete SaaS platform for automated EMI collections and merchant management.
             </p>
+            <div className="pt-2 flex flex-col gap-1">
+              <p className="text-xs font-semibold text-foreground uppercase tracking-widest">Contact Us</p>
+              <a href="mailto:udharipay@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                udharipay@gmail.com
+              </a>
+            </div>
           </div>
 
           {/* ── Quick Links ── */}
@@ -107,6 +122,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }

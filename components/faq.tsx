@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null)
@@ -33,7 +34,14 @@ export default function FAQ() {
   ]
 
   return (
-    <section id="faq" className="px-6 py-20 md:py-28">
+    <motion.section 
+      id="faq" 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6 }}
+      className="px-6 py-20 md:py-28"
+    >
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="text-center space-y-4">
           <span className="text-xs font-semibold text-primary uppercase tracking-widest">FAQ</span>
@@ -47,7 +55,14 @@ export default function FAQ() {
 
         <div className="space-y-3">
           {faqs.slice(0, 6).map((faq, idx) => (
-            <div key={idx} className="rounded-lg border border-border bg-card overflow-hidden">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-20px' }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              key={idx} 
+              className="rounded-lg border border-border bg-card overflow-hidden"
+            >
               <button
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-secondary transition-colors"
@@ -73,10 +88,10 @@ export default function FAQ() {
                   {faq.answer}
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

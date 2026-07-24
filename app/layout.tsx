@@ -7,23 +7,6 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'UdhariPay - Smart Payments. Stronger Business.',
   description: 'Complete SaaS platform for merchants to manage payments, automate collections, and grow business with powerful fintech solutions.',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export const viewport: Viewport = {

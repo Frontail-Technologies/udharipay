@@ -1,4 +1,7 @@
+'use client'
+
 import { Building2, Package, Wrench, Users, Building } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function ForBusinesses() {
   const businesses = [
@@ -30,7 +33,14 @@ export default function ForBusinesses() {
   ]
 
   return (
-    <section id="businesses" className="px-6 py-20 md:py-28 bg-background">
+    <motion.section 
+      id="businesses" 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6 }}
+      className="px-6 py-20 md:py-28 bg-background"
+    >
       <div className="max-w-6xl mx-auto space-y-16">
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
@@ -47,17 +57,24 @@ export default function ForBusinesses() {
           {businesses.slice(0, 4).map((business, index) => {
             const IconComponent = business.icon
             return (
-              <div key={index} className="space-y-4 border border-border shadow-sm p-6 rounded-2xl bg-card hover:shadow-md transition-shadow">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={index} 
+                className="space-y-4 border border-border shadow-sm p-6 rounded-2xl bg-card hover:shadow-md transition-shadow"
+              >
                 <IconComponent className="w-8 h-8 text-primary" strokeWidth={1.5} />
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">{business.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{business.description}</p>
                 </div>
-              </div>
+              </motion.div>
             )
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

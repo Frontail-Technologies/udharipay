@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 export default function FAQ() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0)
+  const [openIdx, setOpenIdx] = useState<number | null>(null)
 
   const faqs = [
     {

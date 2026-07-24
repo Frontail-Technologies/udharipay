@@ -50,15 +50,6 @@ export default function Hero() {
                     <p className="text-sm font-bold text-background leading-none">Google Play</p>
                   </div>
                 </div>
-
-                {/* Contact Button */}
-                <a
-                  href="mailto:udharipay@gmail.com"
-                  className="flex items-center justify-center gap-2.5 rounded-2xl border-2 border-border bg-background px-6 py-3 text-sm font-bold text-foreground hover:bg-secondary transition-colors w-full sm:w-fit"
-                >
-                  <Mail className="w-5 h-5" strokeWidth={2.5} />
-                  Contact Us
-                </a>
               </div>
               {/* Pulsing live badge */}
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-xs font-semibold text-primary">

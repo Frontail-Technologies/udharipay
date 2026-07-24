@@ -39,7 +39,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden gap-7 md:flex">
+            <div className="hidden items-center gap-7 md:flex">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -49,6 +49,12 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
+              <a 
+                href="mailto:udharipay@gmail.com"
+                className="inline-flex h-9 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm"
+              >
+                Contact Us
+              </a>
             </div>
 
 
@@ -89,7 +95,14 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
-
+              <div className="border-t border-border mt-3 pt-3">
+                <a 
+                  href="mailto:udharipay@gmail.com"
+                  className="flex w-full items-center justify-center h-11 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm"
+                >
+                  Contact Us
+                </a>
+              </div>
             </nav>
           </div>
         </>
